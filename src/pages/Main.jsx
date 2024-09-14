@@ -4,6 +4,7 @@ import ToggleButton from "../components/ToggleButton";
 import { useState } from "react";
 import IconSearch from "../assets/images/ico-search.svg";
 import { useNavigate } from "react-router-dom";
+import places from "../api/place-api";
 
 const MainHeader = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const MainContentContainer = styled.div`
   align-items: start;
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 328px;
+  width: 100%;
   height: 600px;
   overflow: hidden;
 `;
@@ -39,17 +40,16 @@ const MainContentContainer = styled.div`
 const Card = styled.div`
   width: 328px;
   height: 460px;
-  background: rgba(217, 217, 217, 0.70);
+  background-image: url(${props => props.bgImage});
+  background-size: cover;
+  background-position: center;
   border-radius: 20px;
   position: absolute;
   will-change: transform;
   transition: transform 0.5s ease-out;
-  top: 140px;
-  &:nth-child(2) {
-    top: 124px;
-    right: 44px;
-    clip-path: inset(0px 100px 0px 0px);
-  }
+  ${({ index, activeIndex }) => css`
+    transform: translateX(${(index - activeIndex) * 340}px);
+  `}
 `;
 
 const ButtonContainer = styled.div`
@@ -103,7 +103,7 @@ const Main = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const swipeCard = () => {
-    setActiveIndex(prev => (prev + 1) % 5);
+    setActiveIndex(prev => (prev + 1) % places.length);
   };
 
   return (
@@ -118,14 +118,20 @@ const Main = () => {
         </SearchButton>
       </MainHeader>
       <MainContentContainer onClick={swipeCard}>
-        <Card style={{ transform: `translateX(-${activeIndex * 340}px)` }} />
-        <Card style={{ transform: `translateX(-${(activeIndex + 1) * 340}px)` }} />
+        {places.map((place, index) => (
+          <Card
+            key={index}
+            index={index}
+            activeIndex={activeIndex}
+            bgImage={place.placeImages[0]}
+          />
+        ))}
       </MainContentContainer>
       <ButtonContainer>
         <Button isNext onClick={swipeCard}>NEXT</Button>
         <Button isLike>LIKE</Button>
       </ButtonContainer>
-      <NavigationBar/>
+      <NavigationBar />
     </div>
   );
 };
