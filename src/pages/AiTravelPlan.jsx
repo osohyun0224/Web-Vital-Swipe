@@ -30,21 +30,24 @@ const ButtonContainer = styled.div`
 const AiTravelPlan = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedDistricts, setSelectedDistricts] = useState([]);
+  const [selectedHowManys, setSelectedHowManys] = useState([]);
 
   const handleNext = () => {
-    if (selectedDistricts.length > 0) {
+    if (selectedDistricts.length || selectedHowManys.length > 0) {
       setActiveIndex((prev) => (prev + 1) % 5);
     }
   };
 
  console.log("구는 뭐선택함",selectedDistricts)
+ console.log("얼마나 방문",selectedHowManys)
 
   return (
     <div>
       <Header/>
       <HeaderProgressiveBar activeIndex={activeIndex} />
       {activeIndex === 0 && <FirstQuestion onDistrictsChange={setSelectedDistricts} />}
-      {activeIndex === 1 && <SecondQuestion />}
+      {activeIndex === 1 && <SecondQuestion
+      onHowManyChange={setSelectedHowManys} />}
       {activeIndex === 2 && <ThridQuestion/>}
       {activeIndex === 3 && <FourQuestion />}
       {activeIndex === 4 && <FiveQuestion />}
