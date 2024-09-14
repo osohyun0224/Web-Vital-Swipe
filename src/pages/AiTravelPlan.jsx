@@ -33,6 +33,7 @@ const AiTravelPlan = () => {
   const [selectedHowManys, setSelectedHowManys] = useState([]);
   const [selectedFavorite, setSelectedFavorite] = useState([]);
   const [selectedReason, setSelectedReason] = useState([]);
+  const [selectedThema, setSelectedThema] = useState([]);
 
   const handleNext = () => {
     if (selectedDistricts.length || selectedHowManys.length > 0) {
@@ -44,6 +45,7 @@ const AiTravelPlan = () => {
  console.log("얼마나 방문",selectedHowManys)
  console.log("뭐좋아함",selectedFavorite)
  console.log("여행 이유", selectedReason)
+ console.log("테마 선택", selectedThema)
 
   return (
     <div>
@@ -56,7 +58,8 @@ const AiTravelPlan = () => {
       onFavoriteChange={setSelectedFavorite} />}
       {activeIndex === 3 && <FourQuestion 
       onReasonChange={setSelectedReason} />}
-      {activeIndex === 4 && <FiveQuestion />}
+      {activeIndex === 4 && <FiveQuestion
+      onThemaChange={setSelectedThema}  />}
       <ButtonContainer
         onClick={handleNext}
         style={{
