@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar";
 import Header from "../components/Header";
 import HeaderProgressiveBar from "../components/HeaderProgressiveBar";
 import FirstQuestion from "../components/FirstQuestion";
 import SecondQuestion from "../components/SecondQuestion";
-import ThridQuestion from "../components/ThridQuestion";
+import ThirdQuestion from "../components/ThridQuestion";
 import FourQuestion from "../components/FourQuestion";
 import FiveQuestion from "../components/FiveQuestion";
 
@@ -35,31 +36,31 @@ const AiTravelPlan = () => {
   const [selectedReason, setSelectedReason] = useState([]);
   const [selectedThema, setSelectedThema] = useState([]);
 
+  const navigate = useNavigate();
+
   const handleNext = () => {
-    if (selectedDistricts.length || selectedHowManys.length > 0) {
+    if (activeIndex === 4) {
+      navigate('/profile'); 
+    } else if (selectedDistricts.length || selectedHowManys.length > 0) {
       setActiveIndex((prev) => (prev + 1) % 5);
     }
   };
 
- console.log("구는 뭐선택함",selectedDistricts)
- console.log("얼마나 방문",selectedHowManys)
- console.log("뭐좋아함",selectedFavorite)
- console.log("여행 이유", selectedReason)
- console.log("테마 선택", selectedThema)
+  console.log("구는 뭐선택함",selectedDistricts)
+  console.log("얼마나 방문",selectedHowManys)
+  console.log("뭐좋아함",selectedFavorite)
+  console.log("여행 이유", selectedReason)
+  console.log("테마 선택", selectedThema)
 
   return (
     <div>
       <Header/>
       <HeaderProgressiveBar activeIndex={activeIndex} />
       {activeIndex === 0 && <FirstQuestion onDistrictsChange={setSelectedDistricts} />}
-      {activeIndex === 1 && <SecondQuestion
-      onHowManyChange={setSelectedHowManys} />}
-      {activeIndex === 2 && <ThridQuestion
-      onFavoriteChange={setSelectedFavorite} />}
-      {activeIndex === 3 && <FourQuestion 
-      onReasonChange={setSelectedReason} />}
-      {activeIndex === 4 && <FiveQuestion
-      onThemaChange={setSelectedThema}  />}
+      {activeIndex === 1 && <SecondQuestion onHowManyChange={setSelectedHowManys} />}
+      {activeIndex === 2 && <ThirdQuestion onFavoriteChange={setSelectedFavorite} />}
+      {activeIndex === 3 && <FourQuestion onReasonChange={setSelectedReason} />}
+      {activeIndex === 4 && <FiveQuestion onThemaChange={setSelectedThema} />}
       <ButtonContainer
         onClick={handleNext}
         style={{

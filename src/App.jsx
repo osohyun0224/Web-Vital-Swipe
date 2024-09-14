@@ -11,6 +11,8 @@ import MyPage from './pages/MyPage.jsx';
 import Search from './pages/Search.jsx';
 import DetailPlace from './pages/DetailPlace.jsx'
 import AiTravelPlan from "./pages/AiTravelPlan.jsx";
+import AiProfile from "./pages/AiProfile.jsx";
+
 import "./App.scss";
 
 const StyledApp = styled.div`
@@ -34,6 +36,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/detailplace/:id" element={<DetailPlace />} />
           <Route path="/plan" element={<AiTravelPlan />} />
+          <Route path="/profile" element={<AiProfile />} />
         </Routes>
       </Router>
     </StyledApp>
