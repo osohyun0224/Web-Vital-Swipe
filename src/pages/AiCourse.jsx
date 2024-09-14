@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import NavigationBar from "../components/NavigationBar";
-
+import { useNavigate } from 'react-router-dom';
 
 const AiCourseContainer= styled.div`
   margin-top: 240px;
@@ -50,13 +50,14 @@ const IntroTitle = styled.div`
 `;
 
 const AiCourse = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <AiCourseContainer>
       <IntroText>유진님을 위한 AI 여행 추천을 준비했어요</IntroText>
       <IntroTitle>새로운 여행의 기준</IntroTitle>
       <IntroTitle>K-SWIPE AI</IntroTitle>
-      <ButtonContainer>AI와 여행 계획 세워보기</ButtonContainer>
+      <ButtonContainer  onClick={() => navigate('/plan')} >AI와 여행 계획 세워보기</ButtonContainer>
       </AiCourseContainer>
       <NavigationBar />
     </div>

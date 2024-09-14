@@ -49,7 +49,7 @@ const ToggleButton = (onSelect) => {
   const toggleSwitch = () => {
     const newState = !isVideo;
     setIsVideo(newState);
-    onSelect(newState); // 상위 컴포넌트에 변경된 상태를 전달
+    onSelect(newState);
   };
 
   return (
