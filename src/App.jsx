@@ -9,7 +9,7 @@ import Main from "./pages/Main.jsx";
 import AiCourse from "./pages/AiCourse.jsx";
 import MyPage from './pages/MyPage.jsx';
 import Search from './pages/Search.jsx';
-import DetailPlace from "./pages/detailplace.jsx";
+import DetailPlace from './pages/DetailPlace.jsx'
 import AiTravelPlan from "./pages/AiTravelPlan.jsx";
 import "./App.scss";
 
