@@ -29,21 +29,33 @@ const ButtonContainer = styled.div`
 
 const AiTravelPlan = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedDistricts, setSelectedDistricts] = useState([]);
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % 5);
+    if (selectedDistricts.length > 0) {
+      setActiveIndex((prev) => (prev + 1) % 5);
+    }
   };
+
+ console.log("구는 뭐선택함",selectedDistricts)
 
   return (
     <div>
       <Header/>
       <HeaderProgressiveBar activeIndex={activeIndex} />
-      {activeIndex === 0 && <FirstQuestion />}
+      {activeIndex === 0 && <FirstQuestion onDistrictsChange={setSelectedDistricts} />}
       {activeIndex === 1 && <SecondQuestion />}
       {activeIndex === 2 && <ThridQuestion/>}
       {activeIndex === 3 && <FourQuestion />}
       {activeIndex === 4 && <FiveQuestion />}
-      <ButtonContainer onClick={handleNext}>
+      <ButtonContainer
+        onClick={handleNext}
+        style={{
+          background: selectedDistricts.length > 0 ? 'var(--primary-secondary-color-primary, #fe720c)' : 'var(--Gray-Scale-Gray-200, #F3F3F7)',
+          color: selectedDistricts.length > 0 ? '#FFFFFF' : 'var(--Gray-Scale-Gray-700, #50535C)',
+          cursor: selectedDistricts.length > 0 ? 'pointer' : 'not-allowed'
+        }}
+      >
         다음
       </ButtonContainer>
       <NavigationBar />
