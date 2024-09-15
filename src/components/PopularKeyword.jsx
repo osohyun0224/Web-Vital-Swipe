@@ -50,10 +50,9 @@ function PopularKeyword({ popularKeywords }) {
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = today.getMonth() + 1; // getMonth() returns month from 0-11
+    const month = today.getMonth() + 1;
     const day = today.getDate();
 
-    // Formatting to 2 digits
     const formattedMonth = month < 10 ? `0${month}` : month;
     const formattedDay = day < 10 ? `0${day}` : day;
 
