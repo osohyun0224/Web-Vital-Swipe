@@ -8,7 +8,6 @@ const IntroContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 50px;
 `;
 
 const IntroText = styled.div`
