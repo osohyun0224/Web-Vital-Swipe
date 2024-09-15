@@ -33,13 +33,13 @@ const MainContentContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   width: 100%;
-  height: 600px;
+  height: 420px;
   overflow: hidden;
 `;
 
 const Card = styled.div`
   width: 328px;
-  height: 460px;
+  height: 400px;
   background-image: url(${props => props.bgImage});
   background-size: cover;
   background-position: center;
