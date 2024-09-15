@@ -13,6 +13,13 @@ import DetailPlace from './pages/DetailPlace.jsx'
 import AiTravelPlan from "./pages/AiTravelPlan.jsx";
 import AiProfile from "./pages/AiProfile.jsx";
 import AiQuesionProfile from "./pages/AiQuestionProfile.jsx";
+import CourseResult from "./pages/CourseResult.jsx";
+import Setting from "./pages/Setting.jsx";
+import Language from "./pages/Language.jsx";
+import Customer from "./pages/Customer.jsx";
+import Notice from "./pages/Notice.jsx";
+import Quit from "./pages/Quit.jsx";
+
 import "./App.scss";
 
 const StyledApp = styled.div`
@@ -38,6 +45,12 @@ function App() {
           <Route path="/plan" element={<AiTravelPlan />} />
           <Route path="/profile" element={<AiProfile />} />
           <Route path="/qna" element={<AiQuesionProfile />} />
+          <Route path="/course" element={<CourseResult />} />
+          <Route path="/setting" element={<Setting/>} />
+          <Route path="/noti" element={<Notice />} />
+          <Route path="/cs" element={<Customer />} />
+          <Route path="/quit" element={<Quit />} />
+          <Route path="/lang" element={<Language />} />
         </Routes>
       </Router>
     </StyledApp>
