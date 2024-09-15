@@ -7,7 +7,8 @@ import Chatbot from '../assets/images/ico-selected-chatbot.svg';
 import Heart from "../assets/images/ico-heart.svg";
 import NoneHeart from "../assets/images/ico-gray-heart.svg";
 import { useState } from "react";
-
+import AiCourseSection from "../components/AiCourseSection";
+import LikedPlace from "../components/LikedPlace";
 const TabBarContainer = styled.div`
   display: flex;
   width: 100%;
@@ -61,6 +62,8 @@ const MyPage = () => {
           LIKE
         </Tab>
       </TabBarContainer>
+      {selectedTab === 'AI Course' && <AiCourseSection />}
+      {selectedTab === 'LIKE' && <LikedPlace />}
       <NavigationBar />
     </div>
   );

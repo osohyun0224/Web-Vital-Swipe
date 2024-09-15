@@ -18,6 +18,7 @@ import Setting from "./pages/Setting.jsx";
 import Language from "./pages/Language.jsx";
 import Customer from "./pages/Customer.jsx";
 import Notice from "./pages/Notice.jsx";
+import SaveCourse from "./pages/SaveCourse.jsx";
 import Quit from "./pages/Quit.jsx";
 
 import "./App.scss";
@@ -51,6 +52,7 @@ function App() {
           <Route path="/cs" element={<Customer />} />
           <Route path="/quit" element={<Quit />} />
           <Route path="/lang" element={<Language />} />
+          <Route path="/save" element={<SaveCourse />} />
         </Routes>
       </Router>
     </StyledApp>
