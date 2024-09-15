@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font: inherit;
+  font-family: 'Pretendard', sans-serif;
   color: inherit;
   flex-shrink: 0;
 }
@@ -20,43 +21,72 @@ body {
   height: auto;
   margin: 0;
   padding: 0;
-  background-color: gray; // PC에서 보여질 배경
+  background-color: gray;
   display: flex;
   justify-content: center;
+  font-family: 'Pretendard', sans-serif;
+}
+
+// 폰트 페이스 정의
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: 300;
-  src: url("assets/fonts/NanumGothicLight.woff2") format('woff2'),
-  url("assets/fonts/NanumGothicLight.woff") format('woff'),
-  url("assets/fonts/NanumGothicLight.otf") format('otf')
-}
-
-@font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: normal;
-  src: url("assets/fonts/NanumGothic.woff2") format('woff2'),
-  url("assets/fonts/NanumGothic.woff") format('woff'),
-  url("assets/fonts/NanumGothic.otf") format('otf')
-}
-
-@font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: bold;
-  src: url("assets/fonts/NanumGothicBold.woff2") format('woff2'),
-  url("assets/fonts/NanumGothicBold.woff") format('woff'),
-  url("assets/fonts/NanumGothicBold.otf") format('truetype')
-}
-
-@font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-ExtraBold.ttf') format('truetype');
   font-weight: 800;
-  src: url("assets/fonts/NanumGothicExtraBold.woff2") format('woff2'),
-  url("assets/fonts/NanumGothicExtraBold.woff") format('woff'),
-  url("assets/fonts/NanumGothicExtraBold.otf") format('truetype')
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
 }
