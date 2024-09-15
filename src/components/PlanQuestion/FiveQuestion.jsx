@@ -35,7 +35,7 @@ const TravelListContainer = styled.div`
 
 const DistrictButton = styled.button`
   display: flex;
-  width: 188px;
+  width: 48%;
   height: 46px;
   padding: 12px 20px;
   gap: 10px;
@@ -47,7 +47,7 @@ const DistrictButton = styled.button`
   background: ${({ selected }) => selected ? 'var(--primary-secondary-color-primary, #FE720C)' : 'var(--Gray-Scale-Gray-100, #FAFAFA)'};
   color: ${({ selected }) => selected ? '#FFFFFF' : 'var(--Gray-Scale-Gray-700, #50535C)'};
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   cursor: pointer;
   border: none;
