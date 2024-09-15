@@ -40,6 +40,7 @@ const CardsContainer = styled.div`
   align-items: center;
   gap: 20px;
   padding: 20px;
+  margin-bottom:130px;
 `;
 
 const ButtonContainer = styled.div`
@@ -81,8 +82,8 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);  // Adjust the opacity as needed
-  z-index: 1000;  // Ensure it's below the modal but above everything else
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
   display: ${({ isVisible }) => isVisible ? 'block' : 'none'};
 `;
 

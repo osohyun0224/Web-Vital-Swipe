@@ -8,13 +8,13 @@ import FirstQuestion from "../components/ProfileQuestion/FirstQuestion";
 import SecondQuestion from "../components/ProfileQuestion/SecondQuestion";
 import ThirdQuestion from "../components/ProfileQuestion/ThridQuestion";
 import FourQuestion from "../components/ProfileQuestion/FourQuestion";
-import FiveQuestion from "../components/PlanQuestion/FiveQuestion";
+
+const QuestionContainer = styled.div`
+  height:500px;
+`;
+
 
 const ButtonContainer = styled.div`
-  position: fixed;
-  bottom: 260px;
-  left: 16px;
-  right: 16px; 
   display: flex;
   padding: 12px 73px;
   justify-content: center;
@@ -60,10 +60,12 @@ const AiQuesionProfile = () => {
     <div>
       <HeaderProgressiveBar activeIndex={activeIndex} />
       <Header/>
+      <QuestionContainer>
       {activeIndex === 0 && <FirstQuestion onAgeChange={setSelectedAges} />}
       {activeIndex === 1 && <SecondQuestion onHowManyChange={setSelectedHowManys} />}
       {activeIndex === 2 && <ThirdQuestion onRangeChange={setSelectedRange} />}
       {activeIndex === 3 && <FourQuestion onReasonChange={setSelecedTraffice} />}
+      </QuestionContainer>
       <ButtonContainer
         onClick={handleNext}
         style={{
