@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Bg_Nature from "../assets/images/bg-nature.svg";
-import Bg_City from  "../assets/images/bg-city.svg";
+import Bg_Nature from "../../assets/images/bg-nature.svg";
+import Bg_City from  "../../assets/images/bg-city.svg";
 
 const IntroContainer = styled.div`
   display: flex;

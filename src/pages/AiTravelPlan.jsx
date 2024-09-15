@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar";
 import Header from "../components/Header";
 import HeaderProgressiveBar from "../components/HeaderProgressiveBar";
-import FirstQuestion from "../components/FirstQuestion";
-import SecondQuestion from "../components/SecondQuestion";
-import ThirdQuestion from "../components/ThridQuestion";
-import FourQuestion from "../components/FourQuestion";
-import FiveQuestion from "../components/FiveQuestion";
+import FirstQuestion from "../components/PlanQuestion/FirstQuestion";
+import SecondQuestion from "../components/PlanQuestion/SecondQuestion";
+import ThirdQuestion from "../components/PlanQuestion/ThridQuestion";
+import FourQuestion from "../components/PlanQuestion/FourQuestion";
+import FiveQuestion from "../components/PlanQuestion/FiveQuestion";
 
 const ButtonContainer = styled.div`
   margin-top: 40px;
@@ -54,8 +54,8 @@ const AiTravelPlan = () => {
 
   return (
     <div>
-      <Header/>
       <HeaderProgressiveBar activeIndex={activeIndex} />
+      <Header/>
       {activeIndex === 0 && <FirstQuestion onDistrictsChange={setSelectedDistricts} />}
       {activeIndex === 1 && <SecondQuestion onHowManyChange={setSelectedHowManys} />}
       {activeIndex === 2 && <ThirdQuestion onFavoriteChange={setSelectedFavorite} />}

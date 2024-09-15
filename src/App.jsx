@@ -12,7 +12,7 @@ import Search from './pages/Search.jsx';
 import DetailPlace from './pages/DetailPlace.jsx'
 import AiTravelPlan from "./pages/AiTravelPlan.jsx";
 import AiProfile from "./pages/AiProfile.jsx";
-
+import AiQuesionProfile from "./pages/AiQuestionProfile.jsx";
 import "./App.scss";
 
 const StyledApp = styled.div`
@@ -37,6 +37,7 @@ function App() {
           <Route path="/detailplace/:id" element={<DetailPlace />} />
           <Route path="/plan" element={<AiTravelPlan />} />
           <Route path="/profile" element={<AiProfile />} />
+          <Route path="/qna" element={<AiQuesionProfile />} />
         </Routes>
       </Router>
     </StyledApp>

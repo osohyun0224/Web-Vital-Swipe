@@ -54,11 +54,11 @@ const DistrictButton = styled.button`
 const howmanys = ["부산은 처음 방문해요", "부산을 인터넷으로는 몇 번 봤어요", "부산에 가본 적은 있지만 꽤 오래전이에요", "부산의 유명한 곳들은 거의 가봤어요", "부산은 저에게 제 2의 고향이에요."];
 
 const SecondQuestion = ({ onHowManyChange }) => {
-  const [selectedHowMany, setSelectedHowMany] = useState(null);  // Single value for selection
+  const [selectedHowMany, setSelectedHowMany] = useState(null);
 
   const handleDistrictClick = (howmany) => {
-    setSelectedHowMany(howmany);  // Set the selected value directly
-    onHowManyChange(howmany);  // Notify the parent component of the selection
+    setSelectedHowMany(howmany);
+    onHowManyChange(howmany);
   };
 
   return (

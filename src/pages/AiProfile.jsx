@@ -44,7 +44,7 @@ const AiProfile = () => {
       <AiCourseContainer>
       <IntroTitle>이제 여행 프로필을</IntroTitle>
       <IntroTitle>함께 만들어볼까요?</IntroTitle>
-      <ButtonContainer  onClick={() => navigate('/plan')}>프로필 만들기</ButtonContainer>
+      <ButtonContainer  onClick={() => navigate('/qna')}>프로필 만들기</ButtonContainer>
       </AiCourseContainer>
       <NavigationBar />
     </div>
