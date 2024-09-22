@@ -19,6 +19,8 @@ import Language from "./pages/Language.jsx";
 import Customer from "./pages/Customer.jsx";
 import Notice from "./pages/Notice.jsx";
 import SaveCourse from "./pages/SaveCourse.jsx";
+import GoogleCallback from './pages/GoogleCallback.jsx';
+import KakaoCallback from './pages/KakaoCallback.jsx';
 import Quit from "./pages/Quit.jsx";
 
 import "./App.scss";
@@ -33,6 +35,8 @@ function App() {
     <StyledApp>
       <Router>
         <Routes>
+        <Route path="/google/callback" element={<GoogleCallback />} />
+        <Route path="/kakao/callback" element={<KakaoCallback />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />

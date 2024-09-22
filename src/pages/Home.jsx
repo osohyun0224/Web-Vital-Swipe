@@ -93,7 +93,7 @@ function Home() {
 
     const handleGoogleLogin = () => {
       const clientId = '30706271741-v0gpke7t6kr8q8dlhc1mmf4egmnd7uhm.apps.googleusercontent.com';
-      const redirectUri = 'https://web-vital-swipe.vercel.app/main';
+      const redirectUri = 'https://web-vital-swipe.vercel.app/google/callback';
       const scope = 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
       
       const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
@@ -102,7 +102,7 @@ function Home() {
   
     const handleKakaoLogin = () => {
       const clientId = 'ea39e0f0ac092252b3c21fbc95908ab2';
-      const redirectUri = 'https://web-vital-swipe.vercel.app/main';
+      const redirectUri = 'https://web-vital-swipe.vercel.app/kakao/callback';
   
       const authUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}`;
       window.location.href = authUrl;
