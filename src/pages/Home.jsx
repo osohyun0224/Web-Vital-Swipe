@@ -90,6 +90,24 @@ const DescContainer = styled.p`
 
 function Home() {
   const navigate = useNavigate();
+
+    const handleGoogleLogin = () => {
+      const clientId = '30706271741-v0gpke7t6kr8q8dlhc1mmf4egmnd7uhm.apps.googleusercontent.com';
+      const redirectUri = 'https://web-vital-swipe.vercel.app/main';
+      const scope = 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
+      
+      const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
+      window.location.href = authUrl;
+    };
+  
+    const handleKakaoLogin = () => {
+      const clientId = 'ea39e0f0ac092252b3c21fbc95908ab2';
+      const redirectUri = 'https://web-vital-swipe.vercel.app/main';
+  
+      const authUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}`;
+      window.location.href = authUrl;
+    };
+
   return (
     <PageContainer>
       <LogoContainer>
@@ -99,11 +117,11 @@ function Home() {
         <Title>K-Swipe와</Title>
         <Title>함께 부산을 SWIPE!</Title>
         <ButtonContainer>
-          <StyledKakaoButton>
+        <StyledKakaoButton onClick={handleKakaoLogin}>
             <img src={kakaoLogo} alt="카카오 로고" />
             카카오로 시작하기
           </StyledKakaoButton>
-          <StyledGoogleButton>
+          <StyledGoogleButton onClick={handleGoogleLogin}>
             <img src={googleLogo} alt="구글 로고" />
             구글로 시작하기
           </StyledGoogleButton>
