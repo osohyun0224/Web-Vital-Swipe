@@ -10,7 +10,7 @@ function KakaoCallback() {
     const error = urlParams.get('error');
     
     if (code) {
-      fetch('http://127.0.0.1:8000/oauth/kakao', {
+      fetch('https://3.38.223.22/api/oauth/kakao', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
