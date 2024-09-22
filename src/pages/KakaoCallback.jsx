@@ -8,6 +8,7 @@ function KakaoCallback() {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     const error = urlParams.get('error');
+    console.log("1번")
     
     if (code) {
       fetch('https://3.38.223.22/api/oauth/kakao', {
@@ -34,7 +35,7 @@ function KakaoCallback() {
       navigate('/main');
     }
   }, [navigate]);
-
+  console.log("2번")
   return <h2>Processing Kakao OAuth...</h2>;
 }
 
